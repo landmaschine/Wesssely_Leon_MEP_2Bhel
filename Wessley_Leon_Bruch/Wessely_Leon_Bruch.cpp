@@ -39,23 +39,47 @@ public:
     {
         return Bruch(zaehler*b.GetNenner()+nenner*b.GetZaehler(),nenner*b.GetNenner());
     }
+
+    Bruch operator+(Bruch y) {
+        return Bruch(zaehler*y.GetNenner()+nenner*y.GetZaehler(),nenner*y.GetNenner());
+    }
+
+    Bruch operator-(Bruch z) {
+        return Bruch(zaehler*z.GetNenner()-nenner*z.GetZaehler(),nenner*z.GetNenner());
+    }
+
+    Bruch operator*(Bruch z) {
+        return Bruch(zaehler*z.GetNenner()*nenner*z.GetZaehler(),nenner*z.GetNenner());
+    }
+
+    Bruch operator/(Bruch z) {
+        return Bruch(zaehler*z.GetNenner()/nenner*z.GetZaehler(),nenner*z.GetNenner());
+    }
+    
 };
 
 int main() {
     //Erzeugen eines Objektes vom neuen Datentyp
-    Bruch k1;
-    Bruch k2(5, 3);
+    Bruch k1(4, 4);
+    Bruch k2(3, 3);
+    Bruch k3;
+    Bruch k4;
+    Bruch k5;
+    Bruch k6;
     //check was im Hauptspeicher ist
     //cout <<"\nkl: " << k1.GetNenner << "|"<< k1.GetNenner;
     //cout <<"\nk2: " << k2.GetZaehler << "|"<< k2.GetNenner;
-    cout <<"\nk1: "; k1.printBruch();
-    cout <<"\nk2: "; k2.printBruch();
-    k1.setBruch(-3, 5); //Kl verändern
-    cout <<"\nk1: "; k1.printBruch();
 
-    k1 = k1.addBruch(k2);
-    cout <<"\nk1: "; k1.printBruch();
-    k1 = k2.addBruch(k1);
-    cout <<"\nk1: "; k1.printBruch();
+    k3 = k1 + k2;
+    cout <<"\nk3: "; k3.printBruch();
+
+    k4 = k2 - k1;
+    cout <<"\nk4: "; k4.printBruch();
+
+    k5 = k2 * k1;
+    cout <<"\nk5: "; k5.printBruch();
+
+    k6 = k2 / k1;
+    cout <<"\nk6: "; k6.printBruch();
     return 0;
 }
