@@ -61,7 +61,7 @@ public:
 int main() {
     //Erzeugen eines Objektes vom neuen Datentyp
     Bruch k1(4, 4);
-    Bruch k2(3, 3);
+    Bruch k2(3, 4);
     Bruch k3;
     Bruch k4;
     Bruch k5;
