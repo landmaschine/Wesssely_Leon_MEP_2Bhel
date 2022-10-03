@@ -27,8 +27,8 @@ public:
     }
     //Setter-Methode
     void setBruch(int z, int n){
-        zaehler =z;
-        nenner =n;
+        zaehler = z;
+        nenner = n;
     }
     //sonstige Methoden
     void printBruch(){
@@ -37,7 +37,7 @@ public:
 
     Bruch addBruch(Bruch b)
     {
-        return Bruch(zaehlerb.GetNenner()+nennerb.GetZaehler(),nennerb.GetNenner());
+        return Bruch(zaehler*b.GetNenner()+nenner*b.GetZaehler(),nenner*b.GetNenner());
     }
 };
 int main() {
