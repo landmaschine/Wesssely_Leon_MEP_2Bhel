@@ -40,6 +40,7 @@ public:
         return Bruch(zaehler*b.GetNenner()+nenner*b.GetZaehler(),nenner*b.GetNenner());
     }
 };
+
 int main() {
     //Erzeugen eines Objektes vom neuen Datentyp
     Bruch k1;
@@ -51,9 +52,10 @@ int main() {
     cout <<"\nk2: "; k2.printBruch();
     k1.setBruch(-3, 5); //Kl verändern
     cout <<"\nk1: "; k1.printBruch();
-    k1=k1.addBruch(k2);
+
+    k1 = k1.addBruch(k2);
     cout <<"\nk1: "; k1.printBruch();
-    k1=k2.addBruch(k1);
+    k1 = k2.addBruch(k1);
     cout <<"\nk1: "; k1.printBruch();
     return 0;
 }
