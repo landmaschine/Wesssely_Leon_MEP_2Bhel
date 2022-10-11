@@ -1,13 +1,15 @@
 //Spezifikation: Datentyp Rationale Zahlen Zahl(Bruch)
 
 #include <iostream>
-using namespace std;
 //Bauplan(Klasse) für den Datentyp
 class Bruch{
     //Attributes - private
 private:
     int zaehler;
     int nenner;
+
+    int rawZaehler;
+    int rawNenner;
     //constructor - public
 public:
     Bruch(){
@@ -15,14 +17,18 @@ public:
         nenner =0;
     }
     Bruch(int z, int n){
-        zaehler =z;
-        nenner =n;
+        zaehler = z;
+        nenner = n;
     }
     //Getter-Methoden
     int GetZaehler(){
+        std::cin >> rawZaehler;
+        rawZaehler % 2 = zaehler;
         return zaehler;
     }
     int GetNenner(){
+        std::cin >> rawNenner;
+        rawNenner % 2 = nenner;
         return nenner;
     }
     //Setter-Methode
@@ -32,7 +38,7 @@ public:
     }
     //sonstige Methoden
     void printBruch(){
-        cout << zaehler <<"|" << nenner;
+        std::cout << zaehler <<"|" << nenner;
     }
 
     Bruch addBruch(Bruch b)
@@ -71,15 +77,15 @@ int main() {
     //cout <<"\nk2: " << k2.GetZaehler << "|"<< k2.GetNenner;
 
     k3 = k1 + k2;
-    cout <<"\nk3: "; k3.printBruch();
+    std::cout <<"\nk3: "; k3.printBruch();
 
     k4 = k2 - k1;
-    cout <<"\nk4: "; k4.printBruch();
+    std::cout <<"\nk4: "; k4.printBruch();
 
     k5 = k2 * k1;
-    cout <<"\nk5: "; k5.printBruch();
+    std::cout <<"\nk5: "; k5.printBruch();
 
     k6 = k2 / k1;
-    cout <<"\nk6: "; k6.printBruch();
+    std::cout <<"\nk6: "; k6.printBruch();
     return 0;
 }
